@@ -2,7 +2,8 @@ package ar.edu.unahur.obj2.operaciones.decorator;
 
 public class AnalisisSandbox extends ModInteligencia{
 
-    public AnalisisSandbox(Alerta alerta) {
+
+    public AnalisisSandbox(Alertable alerta) {
         super(alerta);
     }
 

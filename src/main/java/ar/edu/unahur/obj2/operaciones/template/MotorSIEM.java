@@ -4,50 +4,51 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.unahur.obj2.operaciones.decorator.Alerta;
+import ar.edu.unahur.obj2.operaciones.decorator.Alertable;
 import ar.edu.unahur.obj2.operaciones.decorator.GeolocalizacionIP;
 import ar.edu.unahur.obj2.operaciones.strategy.Analista;
 
 public class MotorSIEM {
 
-    private List<Alerta> alertasPendientes= new ArrayList<>();
+    private List<Alertable> alertasPendientes= new ArrayList<>();
 
     public void agregar(Alerta alerta){
         alertasPendientes.add(alerta);
     }
 
-    public List<Alerta> getAlertasPendientes() {
+    public List<Alertable> getAlertasPendientes() {
         return alertasPendientes;
     }
 
     public void asignarAAnalista(Analista analista){
         
-        this.buscarLaPRimeraAlerta(analista);
+        Alertable alerta = this.buscarLaPRimeraAlerta(analista);
         
-        this.agregarModuloGeolocalizacionIP();
+        if (alerta == null){
+            return ;
+        }
+        Alertable alertaEnriquecida = this.agregarModuloGeolocalizacionIP(alerta);
         
-        this.registrarEnHistorial(alerta);
+        this.registrarEnHistorial(analista, alertaEnriquecida);
 
-
+        alertasPendientes.remove(alerta);
 
         
     }
 
-    public void agregarModuloGeolocalizacionIP(Analista analista){
-        GeolocalizacionIP geo = new GeolocalizacionIP(alerta);
-        geo = geo.getSeveridadBase();
-        analista.agregar(geo);
-        alertasPendientes.remove(geo);
+    public Alertable agregarModuloGeolocalizacionIP(Alertable alerta){
+        return new GeolocalizacionIP(alerta);
     }
 
-    public void buscarLaPRimeraAlerta(Analista analista){
-        Alerta alerta = alertasPendientes.stream()
+    public Alertable buscarLaPRimeraAlerta(Analista analista){
+        return alertasPendientes.stream()
             .filter(analista.getCriterio())
             .findFirst()
             .orElse(null);
     }
 
-    public void registrarEnHistorial(Alerta alerta){
-        alertasPendientes.remove(alerta);
+    public void registrarEnHistorial(Analista analista, Alertable alerta){
+        analista.agregar(alerta);
     }
 
 

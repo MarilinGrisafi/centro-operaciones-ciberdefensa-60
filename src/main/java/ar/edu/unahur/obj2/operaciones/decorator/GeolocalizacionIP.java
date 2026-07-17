@@ -3,7 +3,8 @@ package ar.edu.unahur.obj2.operaciones.decorator;
 public class GeolocalizacionIP extends ModInteligencia{
     
     
-    public GeolocalizacionIP(Alerta alerta) {
+
+    public GeolocalizacionIP(Alertable alerta) {
         super(alerta);
     }
 

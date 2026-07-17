@@ -3,12 +3,12 @@ package ar.edu.unahur.obj2.operaciones.strategy;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.edu.unahur.obj2.operaciones.decorator.Alerta;
+import ar.edu.unahur.obj2.operaciones.decorator.Alertable;
 
 public class Analista {
     private final Integer legajo;
     private ICriterio criterio;
-    private List<Alerta> alertasProcesadas = new ArrayList<>();
+    private List<Alertable> alertasProcesadas = new ArrayList<>();
     
     public Analista(Integer legajo, ICriterio criterio) {
         this.legajo = legajo;
@@ -27,11 +27,11 @@ public class Analista {
         this.criterio = criterio;
     }
 
-    public List<Alerta> getAlertasProcesadas() {
+    public List<Alertable> getAlertasProcesadas() {
         return alertasProcesadas;
     }
 
-    public void agregar(Alerta alerta){
+    public void agregar(Alertable alerta){
         alertasProcesadas.add(alerta);
     }
 

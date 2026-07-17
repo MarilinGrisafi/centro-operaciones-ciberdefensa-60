@@ -1,9 +1,10 @@
 package ar.edu.unahur.obj2.operaciones.decorator;
 
 public abstract class ModInteligencia implements Alertable{
-    protected Alerta alerta;
+    protected Alertable alerta;
     
-    public ModInteligencia(Alerta alerta) {
+    
+    public ModInteligencia(Alertable alerta) {
         this.alerta = alerta;
     }
 
