@@ -3,7 +3,6 @@ package ar.edu.unahur.obj2.operaciones.template;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.edu.unahur.obj2.operaciones.decorator.Alerta;
 import ar.edu.unahur.obj2.operaciones.decorator.Alertable;
 import ar.edu.unahur.obj2.operaciones.decorator.GeolocalizacionIP;
 import ar.edu.unahur.obj2.operaciones.strategy.Analista;
@@ -12,8 +11,8 @@ public class MotorSIEM {
 
     private List<Alertable> alertasPendientes= new ArrayList<>();
 
-    public void agregar(Alerta alerta){
-        alertasPendientes.add(alerta);
+    public void agregar(Alertable a1){
+        alertasPendientes.add(a1);
     }
 
     public List<Alertable> getAlertasPendientes() {
