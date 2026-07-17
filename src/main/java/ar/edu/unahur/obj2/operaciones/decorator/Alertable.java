@@ -1,4 +1,4 @@
-package ar.edu.unahur.obj2.operaciones;
+package ar.edu.unahur.obj2.operaciones.decorator;
 
 /**
  * Alerta

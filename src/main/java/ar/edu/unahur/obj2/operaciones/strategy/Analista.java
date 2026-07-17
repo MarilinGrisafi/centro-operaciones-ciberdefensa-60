@@ -1,6 +1,9 @@
 package ar.edu.unahur.obj2.operaciones.strategy;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import ar.edu.unahur.obj2.operaciones.decorator.Alerta;
 
 public class Analista {
     private final Integer legajo;

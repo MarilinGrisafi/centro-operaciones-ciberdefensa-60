@@ -1,6 +1,4 @@
-package ar.edu.unahur.obj2.operaciones.strategy;
-
-import ar.edu.unahur.obj2.operaciones.Alertable;
+package ar.edu.unahur.obj2.operaciones.decorator;
 
 public class Alerta implements Alertable{
 

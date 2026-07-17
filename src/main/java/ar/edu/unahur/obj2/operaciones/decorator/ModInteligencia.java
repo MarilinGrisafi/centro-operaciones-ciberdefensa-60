@@ -1,11 +1,11 @@
 package ar.edu.unahur.obj2.operaciones.decorator;
 
-import ar.edu.unahur.obj2.operaciones.Alertable;
-import ar.edu.unahur.obj2.operaciones.strategy.Alerta;
-
 public abstract class ModInteligencia implements Alertable{
     protected Alerta alerta;
     
+    public ModInteligencia(Alerta alerta) {
+        this.alerta = alerta;
+    }
 
     @Override
     public String getId() {
