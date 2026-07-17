@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.unahur.obj2.operaciones.decorator.Alertable;
+import ar.edu.unahur.obj2.operaciones.excepciones.AnalistaSinCriterioException;
 
 public class Analista {
     private final Integer legajo;
@@ -11,6 +12,9 @@ public class Analista {
     private List<Alertable> alertasProcesadas = new ArrayList<>();
     
     public Analista(Integer legajo, ICriterio criterio) {
+        if (criterio == null || criterio.equals("")){
+            throw new AnalistaSinCriterioException("El analista debe tener un criterio asignado.");
+        }
         this.legajo = legajo;
         this.criterio = criterio;
     }

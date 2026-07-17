@@ -42,7 +42,7 @@ public class MotorSIEM {
 
     public Alertable buscarLaPRimeraAlerta(Analista analista){
         return alertasPendientes.stream()
-            .filter(analista.getCriterio())
+            .filter(a->analista.getCriterio().puedeProcesar(a))
             .findFirst()
             .orElse(null);
     }
@@ -51,17 +51,5 @@ public class MotorSIEM {
         analista.agregar(alerta);
     }
 
-
-    /*
-    
-    Receta recetaAEntregar = recetasDisponibles.stream()
-            .filter(r-> cliente.leGustaEstaReceta(r))
-            .findFirst()
-            .orElse(new Receta ("batido magico", "nutri", 2000, 0));
-        //esto es necesario para que no de error en caso de que la lista esté vacía
-        ingrediente.agregarAReceta(recetaAEntregar);////le agrega ingredientes extra
-        cliente.recibeReceta(recetaAEntregar);
-        
-        */
     
 }
