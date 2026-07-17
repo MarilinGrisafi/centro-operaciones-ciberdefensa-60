@@ -5,9 +5,9 @@
 
 ## **⚙️ Datos necesarios y obligatorios a completar.**
 
-* **APELLIDO, NOMBRE**:  
-* **COMISIÓN**:  
-* **DNI**:
+* **APELLIDO, NOMBRE**:  GRISAFI Marilin
+* **COMISIÓN**:  3
+* **DNI**: 36074397
 
 ## **📝 Consideraciones Iniciales y Criterio de Evaluación.**
 
