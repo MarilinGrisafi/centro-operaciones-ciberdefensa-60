@@ -27,7 +27,7 @@ public class MotorSIEMTest {
     }
 
     @Test
-    void testAgregar() {
+    void dadaUnaAlertaSeAgregaAlMotorSiemYLaExtensionDeLaListaDeAlertasCambiaA1() {
         ms.agregar(a1);
         assertEquals(1, ms.getAlertasPendientes().size());
     }
@@ -38,7 +38,7 @@ public class MotorSIEMTest {
     }*/
 
     @Test
-    void testAsignarAAnalista() {
+    void dadoUnAnalistaYUnaAlertaSeAsignaUnaAlertaDecoradaAlAnalistaYApareceEnLaListaDeProcesadas() {
         ms.agregar(a1);
         ms.asignarAAnalista(an);
         assertEquals(1, an.getAlertasProcesadas().size());
